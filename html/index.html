@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/mW.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <title>Start Chat</title>
+</head>
+<body>
+    <nav class="chatbar">
+        <div class="control">
+            <a id="plus-btn">
+                <svg>
+                    <use xlink:href="#plus">
+                </svg>
+            </a>
+            <div class="text">
+                <input type="text" placeholder="Message" id="input-id">
+            </div>
+        </div>
+    </nav>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="plus" fill="none" stroke="currentColor">
+            <g stroke-linecap="round" stroke-linejoin="round" stroke-width="1" transform="translate(0.5px 0.5px)">
+                <line stroke-miterlimit="10" x1="12" y1="7" x2="12" y2="17"></line>
+                <line stroke-miterlimit="10" x1="17" y1="12" x2="7" y2="12"></line>
+            </g>
+        </symbol>
+    </svg>
+      
+    <div class="waveWrapper waveAnimation">
+        <div class="waveWrapperInner bgTop">
+          <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
+        </div>
+        <div class="waveWrapperInner bgMiddle">
+          <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
+        </div>
+        <div class="waveWrapperInner bgBottom">
+          <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $("#plus-btn").click(() => {
+            location.href = `/chat?id=${$('#input-id').val()}`
+        })
+    </script>
+</body>
+</html>

@@ -4,6 +4,10 @@ var io = require('socket.io')(http);
 
 var PORT = process.env.PORT || 5000;
 
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/html/index.html')
+})
+
 app.get('/chat', (req, res) => {
     res.sendFile(__dirname + '/html/chat.html')
 })
@@ -14,6 +18,14 @@ app.get('/css/chat.css', (req, res) => {
 
 app.get('/js/chat.js', (req, res) => {
     res.sendFile(__dirname + '/js/chat.js')
+})
+
+app.get('/css/index.css', (req, res) => {
+    res.sendFile(__dirname + '/css/index.css')
+})
+
+app.get('/css/mW.css', (req, res) => {
+    res.sendFile(__dirname + '/css/moveWave.css')
 })
 
 http.listen(PORT, function() {
