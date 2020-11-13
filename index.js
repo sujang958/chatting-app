@@ -42,4 +42,8 @@ io.on('connection', socket => {
         io.emit('send_msg', data)
         console.log(data)
     })
+
+    socket.on('disconnect', () => {
+        user_count--
+    });
 });

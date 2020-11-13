@@ -47,6 +47,10 @@
         $("#plus-btn").click(() => {
             location.href = `/chat?id=${$('#input-id').val()}`
         })
+
+        $("input").on('keydown', e => {
+            if (e.key === "Enter") location.href = `/chat?id=${$('#input-id').val()}`
+        })
     </script>
 </body>
 </html>

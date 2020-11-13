@@ -1,6 +1,7 @@
 var urlParams = new URLSearchParams(window.location.search);
 var socket = io()
 var id_scope = {}
+var i = 0
 
 
 socket.on('cnt', data => {
@@ -8,10 +9,31 @@ socket.on('cnt', data => {
 });
 
 socket.on('send_msg', data => {
+    if (i == 0) {
+        $('ol.chat').children('.system_msg').remove()
+    }
     if (data.room_id == urlParams.get('id')) {
         you2meAddMessage(data.msg, data.user_id)
     }
 })
+
+
+$(".back").click(() => {
+    location.href = '/';
+})
+
+$(".room_name").html(urlParams.get('id'))
+
+$(".textarea").on('keydown', e => {
+    if (e.key == 'Enter' && $('.textarea').val() != '') {
+        emitMessage()
+    }
+})
+
+$(".send").on('click', () => {
+    if ($('.textarea').val() != '') emitMessage()
+})
+
 
 
 function emitMessage() {
@@ -42,14 +64,3 @@ function you2meAddMessage(message, user_id) {
 //     </li>`)
 //     }
 // }
-
-
-$(".textarea").on('keydown', e => {
-    if (e.key == 'Enter' && $('.textarea').val() != '') {
-        emitMessage()
-    }
-})
-
-$(".send").on('click', () => {
-    if ($('.textarea').val() != '') emitMessage()
-})

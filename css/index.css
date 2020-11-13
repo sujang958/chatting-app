@@ -3,18 +3,20 @@
     position: relative;
     padding: 20px;
     border-radius: 42px;
-    background: #275efe;;
+    background: #c2c6cf;;
     overflow: hidden;
     transform-origin: 42px 50%;
-    box-shadow: 0 32px 48px -8px rgba(39, 94, 254, .2);
+    box-shadow: 0 32px 48px -8px rgba(0, 0, 0, 0.2);
     z-index: 10;
 }
+
 .chatbar .control {
     position: relative;
     transform-origin: 22px 22px;
     transition: transform 0.45s ease;
     transform: rotate(0deg);
 }
+
 .chatbar .control > a {
     display: flex;
     justify-content: center;
@@ -25,14 +27,16 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, .2);
+    background: rgba(255, 255, 255, 0.39);
 }
+
 .chatbar .control > a svg {
     width: 28px;
     height: 28px;
     display: block;
     color: #fff;
 }
+
 .chatbar .control .text, .chatbar .control .list {
     position: absolute;
     top: 0;
@@ -41,76 +45,49 @@
     padding: 0 0 0 64px;
     transform-origin: 22px 50%;
 }
+
 .chatbar .control .text {
     top: -6px;
 }
+
 .chatbar .control .text input {
     line-height: 24px;
     padding: 14px 22px;
     border: 0;
     border-radius: 26px;
-    background: rgba(255, 255, 255, .2);
+    background: rgba(255, 255, 255, 0.39);
     display: block;
     color: #fff;
     font-size: 18px;
     outline: none;
     width: 100%;
 }
+
 .chatbar .control .text input::placeholder {
-    color: rgba(255, 255, 255, .4);
+    color: rgba(0, 0, 0, 0.212);
     opacity: 1;
 }
-.chatbar .control .list {
-    margin: 0;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    transform: rotate(135deg);
-}
-.chatbar .control .list li {
-    --y: 0;
-    transition: transform 1s ease;
-    transform: translateY(var(--y));
-}
-.chatbar .control .list li a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, .2);
-}
-.chatbar .control .list li a svg {
-    width: 20px;
-    height: 20px;
-    display: block;
-    color: #fff;
-    stroke-linecap: round;
-    stroke-width: 1.2;
-    stroke-linejoin: round;
-}
-.chatbar .control .list li:nth-child(2) {
-    --y: 8px;
-}
-.chatbar .control .list li:nth-child(3) {
-    --y: 16px;
-}
+
 .chatbar.active {
     animation: top 1s ease-in-out forwards;
 }
+
 .chatbar.active .control {
     --rotate: -135deg;
 }
+
 .chatbar.active .control .list li {
     --y: 0;
 }
+
 .chatbar.active.default {
     animation: down 1s ease-in-out forwards;
 }
+
 .chatbar.active.default .control {
     --rotate: 0deg;
 }
+
 @keyframes top {
     0%, 100% {
         transform: rotate(0deg);
@@ -122,6 +99,7 @@
         transform: rotate(1deg);
    }
 }
+
 @keyframes down {
     0%, 100% {
         transform: rotate(0deg);
@@ -133,30 +111,24 @@
         transform: rotate(-1deg);
    }
 }
+
 html {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
 }
+
 * {
     box-sizing: inherit;
 }
+
 *:before, *:after {
     box-sizing: inherit;
 }
+
 body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #e4ecfa;
-}
-body .dribbble {
-    position: fixed;
-    display: block;
-    right: 20px;
-    bottom: 20px;
-}
-body .dribbble img {
-    display: block;
-    height: 28px;
 }
