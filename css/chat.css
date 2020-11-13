@@ -109,17 +109,6 @@ a{
     box-shadow: -1px 2px 0px #D4D4D4;
 }
 
-.self {
-    justify-content: flex-end;
-    align-items: flex-end;
-}
-.self .msg {
-    order: 1;
-    border-bottom-right-radius: 0px;
-    box-shadow: 1px 2px 0px #D4D4D4;
-}
-
-
 .msg {
   background: white;
   min-width: 50px;
@@ -176,7 +165,7 @@ a{
 input.textarea {
   position: fixed;
   bottom: 0px;
-  left: 0px;
+  left: 20px;
   right: 0px;
   width: 100%;
   height: 50px;
@@ -188,6 +177,21 @@ input.textarea {
   padding-right: 55px;
   color: #666;
   font-weight: 400;
+}
+
+#inputs {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 52px;
+  z-index: 98;
+  background: #fafafa;
+  border: none;
+  outline: none;
+  padding-left: 25px;
+  padding-right: 55px;
 }
 
 .send {
@@ -203,11 +207,31 @@ input.textarea {
   z-index: 100;
   cursor: pointer;
 }
+
 .send:active {
   opacity: 0.5;
 }
 
+#rainbow {
+  position: fixed;
+  display: block;
+  bottom: 11px;
+  left: 6px;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 100;
+}
+
 #user_name {
+  animation-name: ColorPalette;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.rainbow {
   animation-name: ColorPalette;
   animation-duration: 1s;
   animation-iteration-count: infinite;
