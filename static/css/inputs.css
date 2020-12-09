@@ -1,0 +1,30 @@
+.inputs {
+    margin-top: 125px;
+}
+
+.input input {
+    border: none;
+    width: 300px;
+    height: 35px;
+    border-radius: 15px;
+    font-family: 'Montserrat';
+}
+
+.input input::placeholder {
+    font-family: 'Montserrat';
+    font-size: 16px;
+    left: 100px;
+}
+
+.button button {
+    font-family: 'Montserrat';
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(63, 83, 255);
+    color: white;
+    height: 28px;
+    width: 38px;
+    position: relative;
+    left: 125px;
+    bottom: 31.5px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/inputs.css">
+    <link rel="shortcut icon" href="img/icon-go.webp">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css">
+    <title>Start Chat</title>
+</head>
+<body>
+    <div class="titles">
+        <div class="main-title">
+            <h1 class="text-light">Start Chat</h1>
+        </div>
+        <div class="small-title">
+            <div id="main-title-bottom">
+                <h2 class="text-light">Enter room id and start chat.</h2>
+            </div>
+        </div>
+    </div>
+    <div class="inputs">
+        <div class="input">      
+            <input type="text" id="id" placeholder="room id" autocomplete="off">
+        </div>
+        <div class="button">
+            <button class="submit">
+                Go
+            </button>
+        </div>
+    </div>
+    <div class="gradient"></div>
+    <div id="error" class="modal">
+        <p>공백문자만 입력하지 마세요</p>
+    </div>
+
+    <script src="js/indexSubmit.js"></script>
+</body>
+</html>

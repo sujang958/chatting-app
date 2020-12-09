@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="../css/chat.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <title>Chat</title>
 </head>
@@ -13,7 +13,7 @@
         <div class="room_name"></div>
     </div>
     <ol class="chat">
-        <li class="other system_msg">
+        <li class="left system_msg">
             <div class="msg">
                 <p id="user_name"><b>SYSTEM</b></p>
                 <p>Type Some Message!</p>
@@ -27,6 +27,6 @@
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
-    <script src="js/chat.js"></script>
+    <script src="../js/chat.js"></script>
 </body>
 </html>

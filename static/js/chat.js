@@ -54,7 +54,7 @@ function emitMessage() {
 
 function you2meAddMessage(message, user_id, rainbow=false) {
     if (rainbow) {
-        $('ol.chat').append(`<li class="other">
+        $('ol.chat').append(`<li class="left">
         <div class="msg">
             <p id="user_name"><b>${user_id}</b></p>
             <p class="rainbow">${message}</p>
