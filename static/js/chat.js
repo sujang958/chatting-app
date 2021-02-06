@@ -4,16 +4,28 @@ var id_scope = {}
 var i = 0
 
 
+
+window.onload = () => {
+    socket.emit('load', urlParams.get('id'))
+}
+
+
+socket.on('loadData', datas => {
+    for (i in datas) {
+        you2meAddMessage(datas[i].msg, datas[i].user_id, datas[i].rainbow);
+    }
+})
+
 socket.on('cnt', data => {
     id_scope.a = data
 });
 
 socket.on('send_msg', data => {
     if (i == 0) {
-        $('ol.chat').children('.system_msg').remove()
+        $('ol.chat').children('.system_msg').remove();
     }
     if (data.room_id == urlParams.get('id')) {
-        you2meAddMessage(data.msg, data.user_id, data.rainbow)
+        you2meAddMessage(data.msg, data.user_id, data.rainbow);
     }
 })
 
@@ -22,16 +34,16 @@ $(".back").click(() => {
     location.href = '/';
 })
 
-$(".room_name").html(urlParams.get('id'))
+$(".room_name").html(urlParams.get('id'));
 
 $(".textarea").on('keydown', e => {
     if (e.key == 'Enter' && $('.textarea').val() != '') {
-        emitMessage()
+        emitMessage();
     }
 })
 
 $(".send").on('click', () => {
-    if ($('.textarea').val() != '') emitMessage()
+    if ($('.textarea').val() != '') emitMessage();
 })
 
 
@@ -41,15 +53,17 @@ function emitMessage() {
         room_id: urlParams.get('id'),
         msg: $('.textarea').val(),
         user_id: id_scope.a
-    }
+    };
 
     if ($("#rainbow").is(':checked')) {
-        sendJSON.rainbow = true
+        sendJSON.rainbow = true;
+    } else {
+        sendJSON.rainbow = false;
     }
 
-    socket.emit('send', sendJSON)
+    socket.emit('send', sendJSON);
 
-    $('.textarea').val('')
+    $('.textarea').val('');
 }
 
 function you2meAddMessage(message, user_id, rainbow=false) {
@@ -59,14 +73,14 @@ function you2meAddMessage(message, user_id, rainbow=false) {
             <p id="user_name"><b>${user_id}</b></p>
             <p class="rainbow">${message}</p>
         </div>
-    </li>`)
+    </li>`);
     } else {
         $('ol.chat').append(`<li class="other">
             <div class="msg">
                 <p id="user_name"><b>${user_id}</b></p>
                 <p>${message}</p>
             </div>
-        </li>`)
+        </li>`);
     }
 }
 
